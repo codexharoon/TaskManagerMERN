@@ -5,6 +5,7 @@ require('./db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
+const taskRoutes = require('./routes/taskRoutes');
 
 
 app.use(cors());
@@ -19,6 +20,9 @@ app.get('/',(req,res)=>{
 
 // users routes
 app.use('/users',userRoutes);
+
+// tasks routes
+app.use('/tasks',taskRoutes);
 
 // 404 Page not found!
 app.use((req,res,next)=>{
